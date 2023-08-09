@@ -1,12 +1,14 @@
 import React from 'react';
 import './Button.css';
 
+
 type PropTypes = {
   disabled: boolean;
+  name: string;
 };
-const Button: React.FC<PropTypes> = ({ disabled }) => {
+const Button: React.FC<PropTypes> = ({ name, disabled }) => {
   return (
-    <button type="button" className="button" disabled={disabled}>
+    <button type="button" id={name} className="button" disabled={disabled}>
       Скачать
     </button>
   );

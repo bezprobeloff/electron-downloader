@@ -28,7 +28,7 @@ const Downloader: React.FC = () => {
             onChange={form.handleChange}
             validateAttributes={INPUT_URL_FILE_ATTRIBUTES}
           />
-          <Button disabled={!form.isValid} />
+          <Button name="buttonDownload" disabled={!form.isValid} />
         </form>
       </div>
     </main>

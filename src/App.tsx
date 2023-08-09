@@ -1,4 +1,5 @@
-import * as ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import './App.css';
 import Header from './components/Header/Header';
 import Downloader from './components/Downloader/Downloader';
@@ -14,9 +15,9 @@ function App() {
   );
 }
 
-
-function render() {
-  ReactDOM.render(<App/>, document.body);
-}
-
-render();
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
