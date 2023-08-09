@@ -1,0 +1,19 @@
+.downloader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.downloader__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.downloader__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

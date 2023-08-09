@@ -1,0 +1,23 @@
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__element {
+    padding: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33;
+    color: lightblue;
+    text-align: left;
+    border-radius: 6px;
+}
+
+.input__error {
+    height: 22px;
+    font-size: 10px;
+    line-height: 1.2;
+    color: red;
+    text-align: left;
+}

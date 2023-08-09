@@ -1,0 +1,21 @@
+.button {
+    padding: 10px;
+    background-color: deepskyblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: #535bf2;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:disabled {
+    background-color: gray;
+    opacity: .3;
+    cursor: not-allowed;
+}
