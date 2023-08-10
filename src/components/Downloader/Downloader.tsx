@@ -11,7 +11,10 @@ const Downloader: React.FC = () => {
   const nameInputUrl = 'urlFile';
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
-
+    const options = {
+      urlFile: form.values[nameInputUrl]
+    };
+    window.myAPI.save('dfdff');
     form.resetForm();
   };
 
@@ -28,7 +31,7 @@ const Downloader: React.FC = () => {
             onChange={form.handleChange}
             validateAttributes={INPUT_URL_FILE_ATTRIBUTES}
           />
-          <Button name="buttonDownload" disabled={!form.isValid} />
+          <Button name="buttonDownload" handleClick={handleSubmit}  disabled={!form.isValid} />
         </form>
       </div>
     </main>
