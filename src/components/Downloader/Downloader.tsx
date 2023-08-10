@@ -21,7 +21,7 @@ const Downloader: React.FC = () => {
         <form noValidate ref={formRef} className="downloader__form" onSubmit={handleSubmit}>
           <Input
             name={nameInputUrl}
-            value={form.values[nameInputUrl]}
+            value={form.values[nameInputUrl] || ''}
             typeInput="url"
             placeholderText="Введите url файла..."
             errors={form.errors}
