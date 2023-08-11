@@ -11,23 +11,6 @@ const Downloader: React.FC = () => {
   const form = useForm(formRef);
   const nameInputUrl = 'urlFile';
 
-  /*
-  async function saveFile(content: any) {
-    console.log('start');
-
-    //console.log(window.myAPI.ipcRenderer);
-    const savepath = await window.myAPI.ipcRenderer.send('download', {
-      url: content
-    });
-    console.log(savepath);
-
-    await window.myAPI.ipcRenderer.once('download complete', (event, file) => {
-      console.log(file); // Full file path
-    });
-  }
-
-
-   */
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
     const urlFile = form.values[nameInputUrl];
