@@ -4,17 +4,18 @@ import { contextBridge, ipcRenderer } from 'electron';
 
 // Функция, вызываемая при сохранении файла
 async function saveFile(content: any) {
-  try {
-    const result = await ipcRenderer.invoke('save-file', content);
-    if (result) {
-      console.log('Файл успешно сохранен');
-    } else {
-      console.log('Сохранение файла отменено');
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  console.log('start');
+  const savepath = ipcRenderer.send('download', {
+    url: content
+  });
+
+  ipcRenderer.once('download-status', (event, file) => {
+    console.log(file); // Full file path
+  });
 }
+contextBridge.exposeInMainWorld('electron', {
+  doThing: () => ipcRenderer.send('do-a-thing')
+});
 
 contextBridge.exposeInMainWorld('myAPI', {
   desktop: true,
