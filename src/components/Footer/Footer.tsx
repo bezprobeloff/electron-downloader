@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <p className="footer__description">
         <a
           className="footer__link"
-          href="https://github.com/bezprobeloff/downloader"
+          href="https://github.com/bezprobeloff/electron-downloader"
           target="_blank"
           rel="noreferrer"
         >
