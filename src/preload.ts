@@ -3,26 +3,24 @@
 import { contextBridge, ipcRenderer, shell } from 'electron';
 
 // Функция, вызываемая при сохранении файла
-async function saveFile(content: any) {
-  console.log('start');
-  const savepath = ipcRenderer.send('download', {
-    url: content
+async function saveFile(url: string, cbSave: (arg0: string) => void) {
+  ipcRenderer.send('download', {
+    url,
+    properties: {
+      saveAs: true
+    }
   });
 
-  ipcRenderer.once('download-status', (event, file) => {
-    console.log(file); // Full file path
+  ipcRenderer.once('download-status', (event, file: string) => {
+    cbSave(file);
   });
 }
 
 async function openFile(pathFile: string) {
-  shell.openPath(pathFile);
+  await shell.openPath(pathFile);
 }
-contextBridge.exposeInMainWorld('electron', {
-  doThing: () => ipcRenderer.send('do-a-thing')
-});
 
 contextBridge.exposeInMainWorld('myAPI', {
-  desktop: true,
   save: saveFile,
   open: openFile
 });

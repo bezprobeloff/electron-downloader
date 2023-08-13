@@ -1,6 +1,4 @@
-import { PATTERN_URL_FILE } from '../../utils/constants';
-
+// eslint-disable-next-line import/prefer-default-export
 export const INPUT_URL_FILE_ATTRIBUTES = {
-  // pattern: PATTERN_URL_FILE,
   required: true
 };
