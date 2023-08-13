@@ -11,10 +11,22 @@ import { rendererConfig } from './webpack.renderer.config';
 
 const config: ForgeConfig = {
   packagerConfig: {
-    asar: true,
+    asar: true
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'bezprobeloff',
+          name: 'electron-downloader'
+        },
+        prerelease: true
+      }
+    }
+  ],
   plugins: [
     new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
@@ -27,13 +39,13 @@ const config: ForgeConfig = {
             js: './src/renderer.ts',
             name: 'main_window',
             preload: {
-              js: './src/preload.ts',
-            },
-          },
-        ],
-      },
-    }),
-  ],
+              js: './src/preload.ts'
+            }
+          }
+        ]
+      }
+    })
+  ]
 };
 
 export default config;
