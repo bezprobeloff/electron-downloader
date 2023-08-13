@@ -15,4 +15,5 @@
 
 .file:hover {
     background-color: lightcyan;
+    cursor: pointer;
 }
