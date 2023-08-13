@@ -1,0 +1,10 @@
+.files {
+    width: 100%;
+    min-height: 200px;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border: 1px solid lightgray;
+}
