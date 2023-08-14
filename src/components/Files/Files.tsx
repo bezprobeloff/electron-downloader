@@ -8,8 +8,8 @@ type PropTypes = {
 };
 
 const Files: React.FC<PropTypes> = ({ files, handleOpenFile }) => {
-  const renderFiles = files.map((number) => (
-    <File key={number} fileName={number} handleOpenFile={handleOpenFile} />
+  const renderFiles = files.map((file) => (
+    <File key={file} pathFile={file} handleOpenFile={handleOpenFile} />
   ));
 
   return <ul className="files">{renderFiles}</ul>;
