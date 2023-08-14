@@ -14,8 +14,8 @@ declare global {
   }
 }
 const isDev = process.env.DEV;
-const windowWidth = isDev ? 1400 : 650;
-const windowHeight = isDev ? 1200 : 600;
+const windowWidth = isDev ? 1400 : 700;
+const windowHeight = isDev ? 1200 : 650;
 let mainWindow: BrowserWindow;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
