@@ -1,11 +1,11 @@
 {
   "name": "downloader",
   "productName": "downloader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
-    "start": "DEV=true electron-forge start",
+    "start": "set DEV=true && electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
